@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { ITodo } from '../types';
+import { ITodo } from '../types/todo';
 
 const useTodo = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
@@ -9,19 +9,18 @@ const useTodo = () => {
     const todo: ITodo = {
       id: uuidv4(),
       text: input,
-      isDone: false
+      isDone: false,
     };
 
     setTodos([todo, ...todos]);
   };
-
 
   const done = (id: string): void => {
     const newTodos = todos.map((todo) => {
       if (todo.id === id) {
         return {
           ...todo,
-          isDone: !todo.isDone
+          isDone: !todo.isDone,
         };
       }
 
@@ -29,7 +28,7 @@ const useTodo = () => {
     });
 
     setTodos(newTodos);
-  }
+  };
 
   const remove = (todoId: string): void => {
     setTodos(todos.filter(({ id }) => id !== todoId));
@@ -44,4 +43,3 @@ const useTodo = () => {
 };
 
 export default useTodo;
-
