@@ -20,7 +20,9 @@ function TodoList({ todos, done, remove }: ITodoListProps) {
         done={done}
         remove={remove}
       />
-      \
+
+      <div style={{ height: '20px' }} />
+
       <TodoListView
         title='Completed Todos'
         todos={completedTodos}
