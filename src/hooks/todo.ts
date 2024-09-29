@@ -15,7 +15,7 @@ const useTodo = () => {
     setTodos([todo, ...todos]);
   };
 
-  const done = (id: string): void => {
+  const setDone = (id: string): void => {
     const newTodos = todos.map((todo) => {
       if (todo.id === id) {
         return {
@@ -37,7 +37,7 @@ const useTodo = () => {
   return {
     todos,
     add,
-    done,
+    setDone,
     remove,
   };
 };
