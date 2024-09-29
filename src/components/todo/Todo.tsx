@@ -2,16 +2,16 @@ import { ITodo } from '../../types/todo';
 
 interface ITodoProps {
   todo: ITodo;
-  done: (id: string) => void;
+  setDone: (id: string) => void;
   remove: (todoId: string) => void;
 }
 
-function Todo({ todo, done, remove }: ITodoProps) {
+function Todo({ todo, setDone, remove }: ITodoProps) {
   const { id, text, isDone } = todo;
 
   return (
     <>
-      <input type='checkbox' onClick={() => done(id)} checked={todo.isDone} />
+      <input type='checkbox' onClick={() => setDone(id)} checked={todo.isDone} />
 
       <span>{isDone ? <s>{text}</s> : <span>{text}</span>}</span>
 

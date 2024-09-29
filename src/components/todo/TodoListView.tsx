@@ -5,11 +5,11 @@ interface ITodoListViewProps {
   title: string;
   todos: ITodo[];
   emptyMessage: string;
-  done: (id: string) => void;
+  setDone: (id: string) => void;
   remove: (todoId: string) => void;
 }
 
-const TodoListView = ({ title, todos, emptyMessage, done, remove }: ITodoListViewProps) => {
+const TodoListView = ({ title, todos, emptyMessage, setDone, remove }: ITodoListViewProps) => {
   return (
     <div>
       <h3>
@@ -21,7 +21,7 @@ const TodoListView = ({ title, todos, emptyMessage, done, remove }: ITodoListVie
         <ul>
           {todos.map((todo) => (
             <li key={todo.id}>
-              <Todo todo={todo} done={done} remove={remove} />
+              <Todo todo={todo} setDone={setDone} remove={remove} />
             </li>
           ))}
         </ul>

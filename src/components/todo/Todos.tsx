@@ -4,7 +4,7 @@ import '../../App.css';
 import useTodo from '../../hooks/todo';
 
 function Todos() {
-  const { todos, add, done, remove } = useTodo();
+  const { todos, add, setDone, remove } = useTodo();
   const [input, setInput] = useState('');
 
   const handleTodoAdd = () => {
@@ -21,7 +21,7 @@ function Todos() {
       </button>
 
       <h2>Todo List</h2>
-      <TodoList todos={todos} done={done} remove={remove} />
+      <TodoList todos={todos} setDone={setDone} remove={remove} />
     </div>
   );
 }

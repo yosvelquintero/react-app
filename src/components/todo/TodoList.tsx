@@ -3,11 +3,11 @@ import TodoListView from './TodoListView';
 
 interface ITodoListProps {
   todos: ITodo[];
-  done: (id: string) => void;
+  setDone: (id: string) => void;
   remove: (todoId: string) => void;
 }
 
-function TodoList({ todos, done, remove }: ITodoListProps) {
+function TodoList({ todos, setDone, remove }: ITodoListProps) {
   const completedTodos = todos.filter((todo) => todo.isDone);
   const pendingTodos = todos.filter((todo) => !todo.isDone);
 
@@ -17,7 +17,7 @@ function TodoList({ todos, done, remove }: ITodoListProps) {
         title='Pending Todos'
         todos={pendingTodos}
         emptyMessage='No pending todos'
-        done={done}
+        setDone={setDone}
         remove={remove}
       />
 
@@ -27,7 +27,7 @@ function TodoList({ todos, done, remove }: ITodoListProps) {
         title='Completed Todos'
         todos={completedTodos}
         emptyMessage='No completed todos'
-        done={done}
+        setDone={setDone}
         remove={remove}
       />
     </div>
