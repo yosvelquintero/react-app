@@ -1,5 +1,5 @@
 import { ITodo } from '../../types/todo';
-import Todo from './Todo';
+import TodoListView from './TodoListView';
 
 interface ITodoListProps {
   todos: ITodo[];
@@ -13,33 +13,21 @@ function TodoList({ todos, done, remove }: ITodoListProps) {
 
   return (
     <div>
-      {/* Pending Todos */}
-      <h3>Pending Todos ({pendingTodos.length})</h3>
-      {pendingTodos.length === 0 ? (
-        <p>No pending todos</p>
-      ) : (
-        <ul>
-          {pendingTodos.map((todo) => (
-            <li key={todo.id}>
-              <Todo todo={todo} done={done} remove={remove} />
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {/* Completed Todos */}
-      <h3>Completed Todos ({completedTodos.length})</h3>
-      {completedTodos.length === 0 ? (
-        <p>No completed todos</p>
-      ) : (
-        <ul>
-          {completedTodos.map((todo) => (
-            <li key={todo.id}>
-              <Todo todo={todo} done={done} remove={remove} />
-            </li>
-          ))}
-        </ul>
-      )}
+      <TodoListView
+        title='Pending Todos'
+        todos={pendingTodos}
+        emptyMessage='No pending todos'
+        done={done}
+        remove={remove}
+      />
+      \
+      <TodoListView
+        title='Completed Todos'
+        todos={completedTodos}
+        emptyMessage='No completed todos'
+        done={done}
+        remove={remove}
+      />
     </div>
   );
 }
