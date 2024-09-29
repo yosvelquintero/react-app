@@ -11,7 +11,7 @@ function Todo({ todo, done, remove }: ITodoProps) {
 
   return (
     <>
-      <input type='checkbox' onClick={() => done(id)} />
+      <input type='checkbox' onClick={() => done(id)} checked={todo.isDone} />
 
       <span>{isDone ? <s>{text}</s> : <span>{text}</span>}</span>
 
