@@ -1,10 +1,8 @@
-import { ITodo } from '../../types/todo';
+import { ITodo, ITodoBaseProps } from '../../types/todo';
 import TodoListView from './TodoListView';
 
-interface ITodoListProps {
+interface ITodoListProps extends ITodoBaseProps {
   todos: ITodo[];
-  setDone: (id: string) => void;
-  remove: (todoId: string) => void;
 }
 
 function TodoList({ todos, setDone, remove }: ITodoListProps) {

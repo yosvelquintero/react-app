@@ -1,12 +1,10 @@
-import { ITodo } from '../../types/todo';
+import { ITodo, ITodoBaseProps } from '../../types/todo';
 import Todo from './Todo';
 
-interface ITodoListViewProps {
+interface ITodoListViewProps extends ITodoBaseProps {
   title: string;
   todos: ITodo[];
   emptyMessage: string;
-  setDone: (id: string) => void;
-  remove: (todoId: string) => void;
 }
 
 const TodoListView = ({ title, todos, emptyMessage, setDone, remove }: ITodoListViewProps) => {

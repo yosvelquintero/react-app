@@ -1,9 +1,7 @@
-import { ITodo } from '../../types/todo';
+import { ITodo, ITodoBaseProps } from '../../types/todo';
 
-interface ITodoProps {
+interface ITodoProps extends ITodoBaseProps {
   todo: ITodo;
-  setDone: (id: string) => void;
-  remove: (todoId: string) => void;
 }
 
 function Todo({ todo, setDone, remove }: ITodoProps) {
@@ -13,7 +11,7 @@ function Todo({ todo, setDone, remove }: ITodoProps) {
     <>
       <input type='checkbox' onClick={() => setDone(id)} checked={todo.isDone} />
 
-      <span>{isDone ? <s>{text}</s> : <span>{text}</span>}</span>
+      <span>{isDone ? <s>{text}</s> : <>{text}</>}</span>
 
       <button className='remove' onClick={() => remove(id)}>
         x
