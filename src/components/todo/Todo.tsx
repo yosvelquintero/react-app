@@ -9,7 +9,7 @@ function Todo({ todo, setDone, remove }: ITodoProps) {
 
   return (
     <>
-      <input type='checkbox' onClick={() => setDone(id)} checked={todo.isDone} />
+      <input type='checkbox' onClick={() => setDone(id)} checked={todo.isDone} readOnly />
 
       <span>{isDone ? <s>{text}</s> : <>{text}</>}</span>
 

@@ -10,9 +10,10 @@ interface ITodoListViewProps extends ITodoBaseProps {
 const TodoListView = ({ title, todos, emptyMessage, setDone, remove }: ITodoListViewProps) => {
   return (
     <div>
-      <h3>
+      <h4>
         {title} ({todos.length})
-      </h3>
+      </h4>
+
       {todos.length === 0 ? (
         <p>{emptyMessage}</p>
       ) : (
