@@ -27,39 +27,42 @@ body {
   background-color: var(--background-color);
   margin: 0;
   padding: 0;
+}
+
+.container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--padding-medium);
 }
 
 header,
 footer {
+  flex-shrink: 0;
   width: 100%;
   padding: var(--padding-small);
   text-align: center;
   background-color: transparent;
   color: var(--text-color-primary);
-  margin-bottom: var(--padding-medium);
-}
-
-header h1,
-footer p {
-  margin: 0;
-}
-
-footer p {
-  font-size: 10px;
 }
 
 h1 {
   color: var(--text-color-primary);
   text-align: center;
+  margin: 0;
   margin-bottom: var(--padding-medium);
 }
 
+main {
+  flex: 1 0 auto;
+}
+
 h2,
-h3 {
+h3,
+h4 {
   color: var(--text-color-secondary);
   margin-bottom: var(--padding-small);
 }
@@ -67,15 +70,23 @@ h3 {
 p {
   color: var(--text-color-muted);
   font-style: italic;
+  font-size: 12px;
+}
+
+p.error {
+  color: var(--button-color-delete);
 }
 
 .todo-app {
-  background-color: #fff;
+  background-color: var(--text-color-white);
   border-radius: var(--border-radius);
   padding: var(--padding-medium);
   box-shadow: var(--box-shadow);
-  width: 400px;
-  max-width: 100%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 400px) {
+    padding: var(--padding-small);
+  }
 }
 
 input[type='text'] {
@@ -99,6 +110,10 @@ button {
 button.add:disabled {
   background-color: var(--button-color-disabled);
   cursor: not-allowed;
+
+  &:hover {
+    background-color: var(--button-color-disabled);
+  }
 }
 
 button.add:not(:disabled):hover {
@@ -153,10 +168,6 @@ span {
   flex: 1;
   font-size: 14px;
   color: var(--text-color-primary);
-}
-
-s {
-  color: var(--completed-text-color);
 }
 
 .completed-todo {
