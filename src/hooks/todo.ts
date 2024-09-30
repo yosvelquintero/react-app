@@ -3,7 +3,6 @@ import { ITodo } from '../types/todo';
 import useLocalStorage from './local-storage';
 
 const useTodo = () => {
-  // const [todos, setTodos] = useState<ITodo[]>([]);
   const [todos, setTodos] = useLocalStorage<ITodo[]>('todos', []);
 
   const add = (input: string): void => {
