@@ -2,9 +2,9 @@ import './App.css';
 import Todos from './components/todo/Todos';
 
 function App() {
-  const appName = 'TODO App';
+  const appName = 'TODOs App';
   return (
-    <>
+    <div className='container'>
       <header>
         <h1>{appName}</h1>
       </header>
@@ -16,7 +16,7 @@ function App() {
       <footer>
         <p>@2024 {appName}</p>
       </footer>
-    </>
+    </div>
   );
 }
 
