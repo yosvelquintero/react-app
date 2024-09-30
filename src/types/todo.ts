@@ -3,3 +3,8 @@ export interface ITodo {
   text: string;
   isDone: boolean;
 }
+
+export interface ITodoBaseProps {
+  setDone: (id: string) => void;
+  remove: (todoId: string) => void;
+}
