@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { ITodo } from '../types/todo';
-import useLocalStorage from './local-storage';
+import useLocalStorage from './use-local-storage';
 
 const useTodo = () => {
   const [todos, setTodos] = useLocalStorage<ITodo[]>('todos', []);

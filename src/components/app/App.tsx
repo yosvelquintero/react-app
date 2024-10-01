@@ -1,5 +1,5 @@
 import './App.css';
-import Todos from './components/todo/Todos';
+import Todos from '../todo/Todos';
 
 function App() {
   const appName = 'TODOs App';
@@ -14,7 +14,7 @@ function App() {
       </main>
 
       <footer>
-        <p>@2024 {appName}</p>
+        <p>@2024</p>
       </footer>
     </div>
   );

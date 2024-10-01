@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import TodoList from './TodoList';
-import '../../App.css';
-import useTodo from '../../hooks/todo';
+import '../app/App.css';
+import useTodo from '../../hooks/use-todo';
 
 function Todos() {
   const { todos, add, setDone, remove } = useTodo();
